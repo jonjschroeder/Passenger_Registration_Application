@@ -1,0 +1,10 @@
+<div *ngIf = "user">
+  <h2 class = "page-header">{{user.name}}</h2>  
+  <ul class="list-group">
+    <li class="list-group-item">Username: {{user.username}}</li>
+    <li class = "list-group-item">Address: {{user.address}}</li> 
+    <li class = "list-group-item">Phone Number: {{user.phone}}</li> 
+    <li class = "list-group-item">Social Security Number: {{user.ssn}}</li> 
+    <li [routerLinkActive]="['active']" [routerLinkActiveOptions]= "{exact:true}"><a [routerLink]= "['/edit']"><span class="glyphicon glyphicon-user"></span>  Edit</a></li>
+  </ul>
+</div>
