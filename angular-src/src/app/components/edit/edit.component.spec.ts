@@ -10,6 +10,7 @@ describe('EditComponent', () => {
   let fixture: ComponentFixture<EditComponent>;
 
   beforeEach(async(() => {
+    // test bed - configures the test.  Make a dynamic module and pull in all the pieces we need.
     TestBed.configureTestingModule({
       declarations: [ EditComponent ]
     })
@@ -17,12 +18,23 @@ describe('EditComponent', () => {
   }));
 
   beforeEach(() => {
+    //instance of the component
+
     fixture = TestBed.createComponent(EditComponent);
     component = fixture.componentInstance;
-    fixture.detectChanges();
+    // ng oninit will fire - watch out because you can have ng oninit a second twice.  
+    //best to remove and call it in the it function 
+    
   });
-
+  //tests
   it('should create', () => {
-    expect(component).toBeTruthy();
+    var expectedArg = { any : jasmine.any(String), foo : 'fuu' };
+    //Replace ngOnInit with a spy
+    //spy function wraps ngOnInit
+        spyOn(component, 'ngOnInit')
+      .and.callThrough();
+    fixture.detectChanges();
+    // expect(component).toBeTruthy();
+    expect(component.ngOnInit).toHaveBeenCalledWith(expectedArg)
   });
 });

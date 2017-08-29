@@ -45,6 +45,8 @@ const appRoutes: Routes = [
     FlashMessagesModule
   ],
   providers: [ValidateService, AuthService],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  // {provide: AuthService, useClass: AuthServiceMock}
+  
 })
 export class AppModule { }
