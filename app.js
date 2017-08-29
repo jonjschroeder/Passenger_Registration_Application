@@ -44,9 +44,9 @@ app.use('/users', users);
 app.get('/', (req, res)=>{
     res.send('Invalid Endpoint');
 });
-app.get('/', (req,res)=>{
-    res.send('Invalid Endpoint');
-});
+// app.get('/', (req,res)=>{
+//     res.send('Invalid Endpoint');
+// });
 // listen function takes in port and starts of server
 app.listen(port, () => {
     console.log('Server started on port ' +port);
